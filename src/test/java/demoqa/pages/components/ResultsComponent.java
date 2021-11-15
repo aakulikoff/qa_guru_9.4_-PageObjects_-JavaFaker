@@ -13,11 +13,9 @@ public class ResultsComponent {
                                                String subject, String hobby, String picture, String currentAddress, String state, String city ) {
 
         //        Проверка данных во всплывающем окне
-        $(byText("Student Name")).parent()
-                .shouldHave(text(firstname + " " + lastName));
-//        $x("//td[text()='Student Name']").parent().shouldHave(text(firstname + " " + lastName));
-        $x("//td[text()='Student Email']").parent().shouldHave(text(userEmail));
-        $x("//td[text()='Gender']").parent().shouldHave(text(gender));
+        $(byText("Student Name")).parent().shouldHave(text(firstname + " " + lastName));
+        $(byText("Student Email")).parent().shouldHave(text(userEmail));
+        $(byText("Gender")).parent().shouldHave(text(gender));
         $x("//td[text()='Mobile']").parent().shouldHave(text(userNumber));
         $x("//td[text()='Date of Birth']").parent().shouldHave(text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth));
         $x("//td[text()='Subjects']").parent().shouldHave(text(subject));
@@ -25,6 +23,8 @@ public class ResultsComponent {
         $x("//td[text()='Picture']").parent().shouldHave(text(picture));
         $x("//td[text()='Address']").parent().shouldHave(text(currentAddress));
         $x("//td[text()='State and City']").parent().shouldHave(text(state + " " + city));
+
+//
 
     }
 
