@@ -1,14 +1,15 @@
 package demoqa.tests;
 
-public class TestData {
+import com.github.javafaker.Faker;
 
+public class TestData extends TestBase{
+    Faker faker = new Faker();
 
-
-    public static String
-            firstname = "Name",
-            lastName = "Surname",
-            userEmail = "testemail@mail.com",
-            userNumber = "9449440101",
+    public String
+            firstname = faker.name().firstName(),
+            lastName = faker.lordOfTheRings().character(),
+            userEmail = faker.internet().emailAddress("testadress"),
+            userNumber = faker.phoneNumber().subscriberNumber(10),
             gender = "Female",
             monthOfBirth = "August",
             yearOfBirth = "1988",
@@ -16,7 +17,7 @@ public class TestData {
             subject = "Arts",
             picture = "pic.jpg",
             hobby = "Music",
-            currentAddress = "Russia, Moscow, Red Square",
+            currentAddress = faker.gameOfThrones().city() + faker.witcher().location(),
             state = "NCR",
             city = "Delhi";
 }

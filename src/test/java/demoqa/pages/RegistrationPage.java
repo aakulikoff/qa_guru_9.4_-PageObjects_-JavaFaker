@@ -1,7 +1,7 @@
 package demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import demoqa.pages.components.CalendarComponent;
+import demoqa.pages.components.*;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     public CalendarComponent calendar = new CalendarComponent();
+    public ResultsComponent results = new ResultsComponent();
     private final String RegistrationPageText = "Student Registration Form";
     private SelenideElement
             fromTitle =  $(".practice-form-wrapper"),
@@ -16,9 +17,6 @@ public class RegistrationPage {
             lastNameInput =   $("#lastName"),
             userEmailInput =    $("#userEmail"),
             userNumberInput =     $("#userNumber"),
-            monthOfBirthSelect =     $(".react-datepicker__month-select"),
-            yearOfBirthSelect =     $(".react-datepicker__year-select"),
-            dayOfBirthSelect =     $("[aria-label='Choose Wednesday, August 3rd, 1988']"),
             subjectInput =     $("#subjectsInput"),
             hobbyInput =     $("#hobbiesWrapper"),
             uploadImg =      $("#uploadPicture");
@@ -44,7 +42,6 @@ public class RegistrationPage {
 
         return this;
     }
-
 
 
     public RegistrationPage setSubject(String subject) {
@@ -88,27 +85,6 @@ public class RegistrationPage {
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text(firstname + " " + lastName),
                 text(userEmail), text(gender));
-
-        return this;
-    }
-
-    public RegistrationPage checkResultWindow (String firstname, String lastName, String userEmail, String gender,
-                                  String userNumber, String dayOfBirth, String monthOfBirth, String yearOfBirth,
-                                  String subject, String hobby, String picture, String currentAddress, String state, String city ) {
-
-        //        Проверка данных во всплывающем окне
-        $(byText("Student Name")).parent()
-                .shouldHave(text(firstname + " " + lastName));
-//        $x("//td[text()='Student Name']").parent().shouldHave(text(firstname + " " + lastName));
-        $x("//td[text()='Student Email']").parent().shouldHave(text(userEmail));
-        $x("//td[text()='Gender']").parent().shouldHave(text(gender));
-        $x("//td[text()='Mobile']").parent().shouldHave(text(userNumber));
-        $x("//td[text()='Date of Birth']").parent().shouldHave(text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth));
-        $x("//td[text()='Subjects']").parent().shouldHave(text(subject));
-        $x("//td[text()='Hobbies']").parent().shouldHave(text(hobby));
-        $x("//td[text()='Picture']").parent().shouldHave(text(picture));
-        $x("//td[text()='Address']").parent().shouldHave(text(currentAddress));
-        $x("//td[text()='State and City']").parent().shouldHave(text(state + " " + city));
 
         return this;
     }

@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static demoqa.tests.TestData.*;
 
-public class PracticeForm extends TestBase{
+public class PracticeForm extends TestData{
 
 
     @Test
@@ -23,13 +23,11 @@ public class PracticeForm extends TestBase{
                         .setAdresses(currentAddress,state,city)
                         .submit()
                         .checkForm(firstname,lastName,userEmail, gender)
-                        .checkResultWindow(firstname,lastName,userEmail,gender,
+                        .results.checkResultWindow(firstname,lastName,userEmail,gender,
                                 userNumber, dayOfBirth,monthOfBirth,yearOfBirth,
                                 subject,hobby,picture,currentAddress, state,city);
 
-
-
-
-
     }
+
+
 }
