@@ -68,7 +68,7 @@ public class RandomUtils extends TestData {
     }
 
     public static String getRandomEmail() {
-        String emailDomain = "@qa.guru";
+        String emailDomain = "@qa.test";
 
         return getRandomString(10) + emailDomain;
     }
