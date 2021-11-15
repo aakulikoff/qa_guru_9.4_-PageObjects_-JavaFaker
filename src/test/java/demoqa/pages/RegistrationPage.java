@@ -1,12 +1,14 @@
 package demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import demoqa.pages.components.CalendarComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
+    public CalendarComponent calendar = new CalendarComponent();
     private final String RegistrationPageText = "Student Registration Form";
     private SelenideElement
             fromTitle =  $(".practice-form-wrapper"),
@@ -21,8 +23,10 @@ public class RegistrationPage {
             hobbyInput =     $("#hobbiesWrapper"),
             uploadImg =      $("#uploadPicture");
 
-    public void checkRegistartionPage() {
+    public RegistrationPage checkRegistartionPage() {
        fromTitle.shouldHave(text(RegistrationPageText));
+
+        return this;
     }
 
     public RegistrationPage setUserData(String firstname, String lastName, String userEmail, String userNumber){
@@ -34,14 +38,6 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setDateOfBirth(String monthOfBirth, String yearOfBirth) {
-        $("#dateOfBirthInput").click();
-        monthOfBirthSelect.selectOption(monthOfBirth);
-        yearOfBirthSelect.selectOption(yearOfBirth);
-        dayOfBirthSelect.click();
-
-        return this;
-    }
 
     public RegistrationPage setGender(String gender) {
         $(byText(gender)).click();

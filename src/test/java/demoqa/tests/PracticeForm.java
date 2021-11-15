@@ -14,9 +14,9 @@ public class PracticeForm extends TestBase{
     @Test
     void registrationFormTest () {
         registrationPage.checkRegistartionPage();
+        registrationPage.calendar.setDateOfBirth(monthOfBirth, yearOfBirth);
         registrationPage.setUserData(firstname,lastName,userEmail,userNumber)
                         .setGender(gender)
-                        .setDateOfBirth(monthOfBirth,yearOfBirth)
                         .setSubject(subject)
                         .setHobby(hobby)
                         .uploadImg(picture)
