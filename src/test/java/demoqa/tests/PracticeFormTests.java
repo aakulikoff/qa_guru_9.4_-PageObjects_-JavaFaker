@@ -1,14 +1,18 @@
 package demoqa.tests;
 
 import com.codeborne.selenide.*;
+import demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static demoqa.tests.TestData.*;
+import static demoqa.tests.TestBase.*;
 
-public class PracticeForm extends TestData{
+
+
+public class PracticeFormTests extends TestBase{
+
 
 
     @Test

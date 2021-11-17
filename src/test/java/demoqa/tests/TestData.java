@@ -6,10 +6,10 @@ import java.util.Locale;
 
 import static demoqa.utils.RandomUtils.*;
 
-public class TestData extends TestBase{
+public class TestData {
+
     Faker faker = new Faker();
 //    Faker faker = new Faker (new Locale("ru"));
-
 
 
     public String

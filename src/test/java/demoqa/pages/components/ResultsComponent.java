@@ -15,7 +15,7 @@ public class ResultsComponent {
         //        Проверка данных во всплывающем окне
         $(byText("Student Name")).parent().shouldHave(text(firstname + " " + lastName));
         $(byText("Student Email")).parent().shouldHave(text(userEmail));
-        $(byText("Gender")).parent().shouldHave(text(gender));
+        $x("//td[text()='Gender']").parent().shouldHave(text(gender));
         $x("//td[text()='Mobile']").parent().shouldHave(text(userNumber));
         $x("//td[text()='Date of Birth']").parent().shouldHave(text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth));
         $x("//td[text()='Subjects']").parent().shouldHave(text(subject));

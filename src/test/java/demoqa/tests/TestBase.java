@@ -6,7 +6,7 @@ import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class TestBase {
+public class TestBase extends TestData{
 
     RegistrationPage registrationPage = new RegistrationPage();
 
