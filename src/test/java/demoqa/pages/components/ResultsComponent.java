@@ -1,16 +1,15 @@
 package demoqa.pages.components;
 
 import demoqa.pages.RegistrationPage;
+import demoqa.tests.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class ResultsComponent {
+public class ResultsComponent extends TestBase {
 
-    public void checkResultWindow (String firstname, String lastName, String userEmail, String gender,
-                                               String userNumber, String dayOfBirth, String monthOfBirth, String yearOfBirth,
-                                               String subject, String hobby, String picture, String currentAddress, String state, String city ) {
+    public void checkResultWindow ( ) {
 
         //        Проверка данных во всплывающем окне
         $(byText("Student Name")).parent().shouldHave(text(firstname + " " + lastName));

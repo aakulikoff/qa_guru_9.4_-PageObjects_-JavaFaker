@@ -27,9 +27,7 @@ public class PracticeFormTests extends TestBase{
                         .setAdresses(currentAddress,state,city)
                         .submit()
                         .checkForm(firstname,lastName,userEmail, gender)
-                        .results.checkResultWindow(firstname,lastName,userEmail,gender,
-                                userNumber, dayOfBirth,monthOfBirth,yearOfBirth,
-                                subject,hobby,picture,currentAddress, state,city);
+                        .results.checkResultWindow();
 
     }
 
