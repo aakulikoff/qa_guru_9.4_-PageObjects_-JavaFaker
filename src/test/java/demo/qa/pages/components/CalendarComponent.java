@@ -1,7 +1,6 @@
-package demoqa.pages.components;
+package demo.qa.pages.components;
 
 import com.codeborne.selenide.SelenideElement;
-import demoqa.pages.RegistrationPage;
 
 import static com.codeborne.selenide.Selenide.$;
 

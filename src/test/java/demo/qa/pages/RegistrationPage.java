@@ -1,7 +1,7 @@
-package demoqa.pages;
+package demo.qa.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import demoqa.pages.components.*;
+import demo.qa.pages.components.*;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;

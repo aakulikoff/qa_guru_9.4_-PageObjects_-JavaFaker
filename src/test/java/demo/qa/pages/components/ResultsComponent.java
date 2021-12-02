@@ -1,7 +1,6 @@
-package demoqa.pages.components;
+package demo.qa.pages.components;
 
-import demoqa.pages.RegistrationPage;
-import demoqa.tests.TestBase;
+import demo.qa.tests.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;

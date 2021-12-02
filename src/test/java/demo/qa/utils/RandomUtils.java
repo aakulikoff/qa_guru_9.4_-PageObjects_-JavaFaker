@@ -1,6 +1,6 @@
-package demoqa.utils;
+package demo.qa.utils;
 
-import demoqa.tests.TestData;
+import demo.qa.tests.TestData;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;

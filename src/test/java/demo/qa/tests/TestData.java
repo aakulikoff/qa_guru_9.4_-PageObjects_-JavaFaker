@@ -1,10 +1,7 @@
-package demoqa.tests;
+package demo.qa.tests;
 
 import com.github.javafaker.Faker;
-
-import java.util.Locale;
-
-import static demoqa.utils.RandomUtils.*;
+import demo.qa.utils.RandomUtils;
 
 public class TestData {
 
@@ -13,9 +10,9 @@ public class TestData {
 
 
     public String
-            firstname = getRandomString(10),
+            firstname = RandomUtils.getRandomString(10),
             lastName = faker.lordOfTheRings().character(),
-            userEmail = getRandomEmail(),
+            userEmail = RandomUtils.getRandomEmail(),
             userNumber = faker.phoneNumber().subscriberNumber(10),
             gender = "Female",
             monthOfBirth = "August",
